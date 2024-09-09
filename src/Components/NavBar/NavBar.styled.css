@@ -1,0 +1,10 @@
+.nav-link {
+    /* Styles de base pour les liens */
+    color: #000; /* Couleur par défaut */
+    text-decoration: none;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #007bff; /* Par exemple, une couleur bleue */
+  }

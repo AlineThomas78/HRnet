@@ -1,0 +1,35 @@
+[
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "dateOfBirth": "01-01-1990",
+      "startDate": "15-06-2021",
+      "department": "Sales",
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "dateOfBirth": "12-03-1985",
+      "startDate": "20-04-2019",
+      "department": "Sales",
+      "street": "456 Elm St",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90001"
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "dateOfBirth": "1975-10-05",
+      "startDate": "2020-09-01",
+      "department": "Marqueting",
+      "street": "789 Oak St",
+      "city": "Chicago",
+      "state": "IL",
+      "zipCode": "60601"
+    }
+  ]
