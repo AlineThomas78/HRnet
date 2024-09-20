@@ -7,29 +7,56 @@ import "./NavBar.styled.css";
 
 function NavBar() {
   return (
-    <Navbar bg="light" data-bs-theme="light">
-      <Container>
-        <Navbar.Brand href="/">
-        <img
+    <Navbar
+      expand="sm"
+      className="navbar-expand-sm"
+      style={{ backgroundColor: "#2F2F2F" }}
+    >
+      <Container className="d-flex justify-content-between">
+        <Navbar.Brand href="/" style={{ color: "white" }}>
+          <img
             src={Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
+            width="40"
+            height="40"
+            className="d-inline-block align-center"
             alt="HRNet Logo"
-          />
-          {' '}HRNet
+            style={{ marginRight: "0.5rem" }}
+          />{" "}
+          HRNet
         </Navbar.Brand>
-        <Nav className="me-auto">
-        <Nav.Link as={NavLink} to="/" exact="true" activeClassName="selected" className="nav-link">
-            Create Employee
-          </Nav.Link>
-        <Nav.Link as={NavLink} to="/test-current-employees" activeClassName="selected" className="nav-link">
-            Test Current Employee
-          </Nav.Link>
-          <Nav.Link as={NavLink} to="/current-employee" activeClassName="selected" className="nav-link">
-            Current Employee
-          </Nav.Link>
-        </Nav>
+
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          style={{ backgroundColor: "white" }}
+        />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto">
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              exact="true"
+              className="nav-link"
+              style={({ isActive }) => ({
+                color: "white",
+                borderBottom: isActive ? "2px solid white" : "none",
+              })}
+            >
+              Create Employee
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="/current-employees"
+              className="nav-link"
+              style={({ isActive }) => ({
+                color: "white",
+                borderBottom: isActive ? "2px solid white" : "none",
+              })}
+            >
+              Current Employee
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

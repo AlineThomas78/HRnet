@@ -16,7 +16,7 @@ import {
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../employeeSlice";
 
-function Formulaire() {
+function Formulaire({setShowModal, handleCloseModal}) {
   const dispatch = useDispatch();
 
   // Local state for form inputs
@@ -33,25 +33,20 @@ function Formulaire() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Create new employee object
     const newEmployee = {
       firstName,
       lastName,
       birthDate,
       startDate,
       department,
-      address: {
-        street,
-        city,
-        state,
-        zipCode,
-      },
+      street,
+      city,
+      state,
+      zipCode,
     };
 
-    // Dispatch the addEmployee action with the new employee
     dispatch(addEmployee(newEmployee));
 
-    // Clear the form after submission
     setFirstName("");
     setLastName("");
     setBirthDate("");
@@ -60,10 +55,12 @@ function Formulaire() {
     setStreet("");
     setCity("");
     setZipCode("");
+
+    setShowModal(true);
   };
 
   return (
-    <FormContainer>
+    <FormContainer style={{border:'2px solid black'}}>
       <Form
         onSubmit={handleSubmit}
         className="pb-3 pt-3"
@@ -71,10 +68,8 @@ function Formulaire() {
           backgroundColor: "white",
           padding: "1rem 0",
           borderRadius: "20px",
-          border: "2px solid black",
         }}
       >
-        <SubTitle>Create Employee</SubTitle>
 
         <StyledRow className="mb-3">
           <Form.Group
