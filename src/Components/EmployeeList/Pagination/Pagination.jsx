@@ -69,20 +69,17 @@ function PaginationCurrentEmployees({ jsonEmployees }) {
 
   return (
     <>
-      <div className="container-fluid containerShowing d-flex justify-content-between p-3">
-        <div className="d-flex justify-content-between align-items-center fw-bold">
+      <div className="container-fluid containerShowing d-flex flex-column flex-sm-row justify-content-between align-items-center p-3">
+      <div className=" fw-bold">
           <span>
             Showing {startIndex} to {endIndex} of {filteredEmployees.length}{" "}
             entries
           </span>
         </div>
-        <div className="containerPagination">
-          <Pagination
-            style={{ marginBottom: "0" }}
-            className="pagination-responsive"
-          >
-            {/* Boutons pour mobile (affichage minimal) */}
-            <div className="d-block d-sm-none">
+        <div className="containerPagination d-flex align-items-center mt-2 mt-sm-0">
+           {/* Pagination pour petits écrans */}
+           <div className="d-sm-none">
+            <Pagination size="sm" className="pagination-sm mb-0">
               <Pagination.First
                 onClick={() => handlePageChange(1)}
                 disabled={currentPage === 1 || totalPages === 0}
@@ -102,10 +99,12 @@ function PaginationCurrentEmployees({ jsonEmployees }) {
                 onClick={() => handlePageChange(totalPages)}
                 disabled={currentPage === totalPages || totalPages === 0}
               />
-            </div>
+            </Pagination>
+          </div>
 
-            {/* Pagination complète pour les écrans plus grands */}
-            <div className="d-none d-sm-flex">
+          {/* Pagination complète pour écrans plus grands */}
+          <div className="d-none d-sm-flex">
+            <Pagination className="mb-0">
               <Pagination.First
                 onClick={() => handlePageChange(1)}
                 disabled={currentPage === 1 || totalPages === 0}
@@ -115,7 +114,6 @@ function PaginationCurrentEmployees({ jsonEmployees }) {
                 disabled={currentPage === 1 || totalPages === 0}
               />
               {paginationItems}{" "}
-              {/* Montre tous les items pour les écrans larges */}
               <Pagination.Next
                 onClick={() =>
                   handlePageChange(Math.min(totalPages, currentPage + 1))
@@ -126,32 +124,30 @@ function PaginationCurrentEmployees({ jsonEmployees }) {
                 onClick={() => handlePageChange(totalPages)}
                 disabled={currentPage === totalPages || totalPages === 0}
               />
-            </div>
-          </Pagination>
+            </Pagination>
+          </div>
 
-          {/* Sélection pour les entrées par page */}
-          <div className="d-flex justify-content-between align-items-center fw-bold">
-            <div className="entries-select">
-              <Form.Select
-                id="entriesSelect"
-                value={employeesPerPage}
-                onChange={handleEmployeesPerPageChange}
-                className="form-select-sm"
-                style={{
-                  width: "70px",
-                  padding: "0.50rem",
-                  color: "#0d6efd",
-                  fontWeight: "bold",
-                }}
-              >
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </Form.Select>
-              <span className="ms-2">entries</span>
-            </div>
+          {/* Sélection du nombre d'entrées par page */}
+          <div className="d-flex align-items-center fw-bold ms-2">
+            <Form.Select
+              id="entriesSelect"
+              value={employeesPerPage}
+              onChange={handleEmployeesPerPageChange}
+              className="form-select-sm"
+              style={{
+                width: "60px",
+                padding: "0.4rem",
+                color: "#0d6efd",
+                fontWeight: "bold",
+              }}
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </Form.Select>
+            <span className="ms-2">entries</span>
           </div>
         </div>
       </div>

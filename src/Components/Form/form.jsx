@@ -16,7 +16,8 @@ import {
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../employeeSlice";
 
-function Formulaire({setShowModal, handleCloseModal}) {
+function Formulaire({setShowModal, handleCloseModal, showModal}) {
+  console.log(showModal , 'setShow')
   const dispatch = useDispatch();
 
   // Local state for form inputs
@@ -63,15 +64,16 @@ function Formulaire({setShowModal, handleCloseModal}) {
     <FormContainer style={{border:'2px solid black'}}>
       <Form
         onSubmit={handleSubmit}
-        className="pb-3 pt-3"
-        style={{
-          backgroundColor: "white",
-          padding: "1rem 0",
-          borderRadius: "20px",
-        }}
+        className="pb-3 pt-3 bg-white rounded"
+        // style={{
+        //   backgroundColor: "white",
+        //   padding: "1rem 0",
+        //   borderRadius: "20px",
+        // }}
       >
 
         <StyledRow className="mb-3">
+        <Col xs={12} md={6}>
           <Form.Group
             as={Col}
             controlId="formFirstName"
@@ -81,7 +83,7 @@ function Formulaire({setShowModal, handleCloseModal}) {
               controlId="floatingFirstName"
               label="First Name"
               className="mb-3"
-              style={{ width: "80%", fontWeight: "bold" }}
+              style={{ fontWeight: "bold" }}
             >
               <Form.Control
                 type="text"
@@ -91,7 +93,9 @@ function Formulaire({setShowModal, handleCloseModal}) {
               />
             </FloatingLabel>
           </Form.Group>
+          </Col>
 
+          <Col xs={12} md={6}>
           <Form.Group
             as={Col}
             controlId="formLastName"
@@ -101,7 +105,7 @@ function Formulaire({setShowModal, handleCloseModal}) {
               controlId="floatingLastName"
               label="Last Name"
               className="mb-3"
-              style={{ width: "80%", fontWeight: "bold" }}
+              style={{ fontWeight: "bold" }}
             >
               <Form.Control
                 type="text"
@@ -111,25 +115,27 @@ function Formulaire({setShowModal, handleCloseModal}) {
               />
             </FloatingLabel>
           </Form.Group>
+          </Col>
         </StyledRow>
 
+        {/* // date fields  // */}
         <StyledRow className="mb-3">
+        <Col xs={12} md={6}>
           <Form.Group
-            as={Col}
             controlId="formBirthDate"
-            className="d-flex justify-content-start flex-column p-0"
           >
-            <StyledLabel className="d-flex  fw-bold" style={{ width: "80%" }}>
+            <StyledLabel className="d-flex  fw-bold" >
               Date of birth
             </StyledLabel>
             <Form.Control
               className="d-flex"
-              style={{ width: "80%", padding: "1rem 0.75rem" }}
+              style={{ padding: "1rem 0.75rem" }}
               type="date"
               value={birthDate}
               onChange={(e) => setBirthDate(e.target.value)}
             />
           </Form.Group>
+          </Col>
 
           <Form.Group
             as={Col}

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Form from "../../Components/Form/form";
+// import Form from "../../Components/Form/form";
 import { Title } from "./CreateEmployee.styled";
-import Modale from 'react-aline-modal';
-import 'react-aline-modal/dist/Modale.css'
+import Modal from 'react-aline-modal';
+import 'react-aline-modal/dist/Modal.css'
+import Formulaire from "../../Components/Form/form";
 
 function CreateEmployee() {
   const [showModal, setShowModal] = useState(false);
@@ -22,9 +23,9 @@ function CreateEmployee() {
       >
         Create Employee
       </Title>
-      <Form setShowModal={setShowModal} />
+      <Formulaire setShowModal={setShowModal} showModal ={showModal}/>
 
-      <Modale open={showModal} onClose={handleCloseModal} />
+      <Modal open={showModal} onClose={handleCloseModal} />
     </>
   );
 }
