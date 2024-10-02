@@ -2,10 +2,11 @@ import PaginationCurrentEmployees from "../../Components/EmployeeList/Pagination
 import SearchBar from "../../Components/EmployeeList/Search/Search";
 import TableCurrentEmployees from "../../Components/EmployeeList/Table/table";
 import { Link } from "react-router-dom";
-import { Container } from "./TestCurrentEmployees.styled";
+import { Container } from "./CurrentEmployees.styled";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Title } from "../CreateEmployee/CreateEmployee.styled";
 
 function CurrentEmployer() {
 
@@ -28,15 +29,13 @@ function CurrentEmployer() {
         });
     }
   }, [employeesFromStore.length]);
-  console.log(jsonEmployees, 'hey')
 
 
   return (
     
     <>
       <Container>
-        <h1>Current Employees</h1>
-        <Link to="/">Home</Link>
+        <Title>Current Employees</Title>
 
         <SearchBar jsonEmployees = {jsonEmployees} />
         <TableCurrentEmployees jsonEmployees={jsonEmployees}/>

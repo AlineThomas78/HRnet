@@ -12,8 +12,13 @@ export const SubTitle = styled.h2`
 `;
 
 export const StyledRow = styled(Row)`
-  width: 80%;
+  // width: 80%;
   margin: 0 auto; 
+`;
+
+export const StyledSelect = styled(Form.Select)`
+  padding: 1rem 0.75rem !important;
+  font-weight: bold;
 `;
 
 export const StyledFormGroup = styled(Form.Group)`
@@ -21,11 +26,7 @@ export const StyledFormGroup = styled(Form.Group)`
   margin: 0 auto;    
 `;
 
-export const StyledLabel = styled(Form.Label)`
-  text-align: left;
-  padding-left:10px;
-  display: block;  
-`;
+
 
 export const Button = styled.button`
   // background-image: linear-gradient(to right, #DAD299 0%, #B0DAB9 51%, #DAD299 100%);

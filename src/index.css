@@ -5,4 +5,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.table td, .table th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 

@@ -23,16 +23,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-### `Installing the react-aline-modal Library`
-To install and use the react-aline-modal component in your project, follow these steps:
-
-### `Installation`
-Run the following command to install the modal component:
-
-
-npm install react-aline-modal
- ``` mettre du code ici en exemple les props et montrer les imports  ```
-
-Usage

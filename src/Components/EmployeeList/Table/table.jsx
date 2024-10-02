@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Table, Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import '../../../index.css'
 
 
 function TableCurrentEmployees({jsonEmployees}) {
@@ -12,8 +13,6 @@ function TableCurrentEmployees({jsonEmployees}) {
   const employeesPerPage = useSelector((state) => state.employees.employeesPerPage);
 
   const employees = employeesFromStore.length > 0 ? employeesFromStore : jsonEmployees;
-  console.log(employeesFromStore, 'hey2')
-  console.log(employees, 'hey3')
 
     // Gérer l'état pour le tri
     const [sortConfig, setSortConfig] = useState({ key: 'firstName', direction: 'asc' });

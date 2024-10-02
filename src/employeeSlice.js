@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   employees: [],
   searchTerm: '', 
-  currentPage: 1,   // Page active
-  employeesPerPage: 10, // Nombre d'employés par page
+  currentPage: 1,   
+  employeesPerPage: 10, 
 };
 
 const employeeSlice = createSlice({
