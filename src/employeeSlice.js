@@ -14,17 +14,15 @@ const employeeSlice = createSlice({
     addEmployee: (state, action) => {
       state.employees.push(action.payload);
     },
-    setEmployees: (state, action) => {
-      state.employees = action.payload; // Remplacer tous les employés
-    },
+   
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
-      state.currentPage = 1; // Réinitialiser la page lors d'une recherche
+      state.currentPage = 1; 
     },
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
-    // Nouvelle action pour définir le nombre d'employés par page
+    
     setEmployeesPerPage: (state, action) => {
       state.employeesPerPage = action.payload;
     },

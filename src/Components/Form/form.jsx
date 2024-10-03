@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Col, FloatingLabel, Row } from "react-bootstrap";
 import {
   StyledRow,
-  StyledLabel,
   FormContainer,
   Button,
   StyledSelect,
@@ -10,7 +9,7 @@ import {
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../../employeeSlice";
 
-function Formulaire({ setShowModal, handleCloseModal, showModal }) {
+function Formulaire({ setShowModal }) {
   const dispatch = useDispatch();
 
   // Local state for form inputs

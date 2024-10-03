@@ -1,7 +1,6 @@
 import PaginationCurrentEmployees from "../../Components/EmployeeList/Pagination/Pagination";
 import SearchBar from "../../Components/EmployeeList/Search/Search";
 import TableCurrentEmployees from "../../Components/EmployeeList/Table/table";
-import { Link } from "react-router-dom";
 import { Container } from "./CurrentEmployees.styled";
 import axios from "axios";
 import { useEffect, useState } from "react";

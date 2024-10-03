@@ -15,7 +15,7 @@ function CreateEmployee() {
       <Container>
 
         <Title>Create Employee</Title>
-        <Formulaire setShowModal={setShowModal} showModal={showModal} />
+        <Formulaire setShowModal={setShowModal}  />
         <Modal open={showModal} onClose={handleCloseModal} title ="Create Employee" textContent ="Employee Created !" />
 
       </Container>
